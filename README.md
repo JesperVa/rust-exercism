@@ -1,4 +1,4 @@
-##Rust Exercism
+## Rust Exercism
 
 
 These are my solutions to the Rust track at Exercism.
