@@ -11,14 +11,23 @@ pub enum LogLevel {
 }
 /// primary function for emitting logs
 pub fn log(level: LogLevel, message: &str) -> String {
-    unimplemented!()
+    format!("[{}]: {}", get_caps_name(level), message)
 }
 pub fn info(message: &str) -> String {
-    unimplemented!()
+    log(LogLevel::Info, message)
 }
 pub fn warn(message: &str) -> String {
-    unimplemented!()
+    log(LogLevel::Warning, message)
 }
 pub fn error(message: &str) -> String {
-    unimplemented!()
+    log(LogLevel::Error, message)
+}
+
+fn get_caps_name(level: LogLevel) -> String {
+    match level {
+        LogLevel::Error => "ERROR".to_string(),
+        LogLevel::Info => "INFO".to_string(),
+        LogLevel::Warning => "WARNING".to_string(),
+
+    }
 }
